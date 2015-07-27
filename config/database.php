@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'bhra2'),
 
     /*
     |--------------------------------------------------------------------------
@@ -64,6 +64,19 @@ return [
             'strict'    => false,
         ],
 
+        'bhra2' => [
+            'driver'    => 'mysql',
+            'host'      => env('DB_HOST', 'will find in .env'),
+            'database'  => env('DB_DATABASE', 'will find in .env'),
+            'username'  => env('DB_USERNAME', 'will find in .env'),
+            'password'  => env('DB_PASSWORD', 'will find in .env'),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+        ],
+       
+        
         'pgsql' => [
             'driver'   => 'pgsql',
             'host'     => env('DB_HOST', 'localhost'),
