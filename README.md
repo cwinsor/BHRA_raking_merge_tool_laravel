@@ -1,0 +1,2 @@
+# BHRA_raking_merge_tool_laravel
+This is a web-based application for Bare Hill Rowing Team's Leaf Raking Fundraiser. The goal is to organize the rakers and supervisors into teams and assigned those teams to customer appointments. Given is the roster, availability of rakers and supervisors, and schedule for customer appointments. These are .csv format files, the latter two come from VolunteerSpot and SuperSAAS.  The former is extracted from excel.  This is a PHP application based on Laravel with database/server being MySQL and Apache based on XAMPP.
