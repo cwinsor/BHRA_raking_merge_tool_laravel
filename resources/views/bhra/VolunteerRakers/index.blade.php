@@ -25,6 +25,7 @@
 <a href="{{ action('VolunteerRakersController@show', [$volunteerRaker->id]) }}">
 {{  $volunteerRaker->FirstName }}
 {{  $volunteerRaker->LastName }}
+{{  $volunteerRaker->email }}
 </a>
 
 

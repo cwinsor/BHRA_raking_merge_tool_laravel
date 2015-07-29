@@ -1,7 +1,9 @@
 <?php
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
+//use Illuminate\Http\Request;
+use Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\VolunteerRaker;
@@ -11,7 +13,7 @@ class VolunteerRakersController extends Controller
 
     public function index()
     {
-        $volunteerRakers = VolunteerRaker::all();
+        $volunteerRakers = VolunteerRaker::latest('updated_at')->get();
         
         // return $volunteerRakers;
         return view('bhra\volunteerRakers.index', compact('volunteerRakers'));
@@ -31,5 +33,35 @@ class VolunteerRakersController extends Controller
         // return $id;
         // return $volunteerRaker;
         return view('bhra\volunteerRakers.show', compact('volunteerRaker'));
+    }
+    
+    public function create()
+    {
+        return view('bhra\volunteerRakers.create');
+    }
+    
+    public function store()
+    {
+        $input = Request::all();
+       //return $input;     
+
+       // VolunteerRaker::create(['firstname'=>$input['firstname']]);
+       // $volunteerRaker = new VolunteerRaker();
+       // $volunteerRaker->firstname = $input['firstname'];
+
+        //$input['blah'] = 'blah';
+        // VolunteerRaker::create($input);  // note fillable field on VolunteerRaker class prevents mass injection
+
+        $volunteerRaker = new VolunteerRaker();
+        $volunteerRaker->firstname = $input['firstname'];
+        $volunteerRaker->lastname = $input['lastname'];
+        $volunteerRaker->email = $input['email'];
+        $volunteerRaker->save();
+
+//          VolunteerRaker::create($input);  // note fillable field on VolunteerRaker class prevents mass injection
+        //  $volunteerRaker->save();
+        
+        
+       return redirect('volunteerrakers');
     }
 }

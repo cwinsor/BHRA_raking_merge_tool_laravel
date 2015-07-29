@@ -27,4 +27,6 @@ Route::get('contact', 'PagesController@contact');
 Route::get('articles', 'ArticlesController@index');
 
 Route::get('volunteerrakers', 'VolunteerRakersController@index');
+Route::get('volunteerraker/create', 'VolunteerRakersController@create');
 Route::get('volunteerraker/{id}', 'VolunteerRakersController@show');
+Route::post('volunteerraker', 'VolunteerRakersController@store');
